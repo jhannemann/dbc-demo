@@ -1,0 +1,8 @@
+set(CMAKE_AUTOMOC ON)
+
+link_directories(${PROJECT_BINARY_DIR}/assertexcept)
+link_directories(${PROJECT_BINARY_DIR}/assertexcept)
+
+add_executable(ssntest ssntest.cpp)
+add_test(SSNTest ssntest)
+target_link_libraries(ssntest Qt5::Test employee ssn assertexcept)

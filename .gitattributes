@@ -1,0 +1,8 @@
+* text=auto
+
+CMakeLists.txt text
+Jenkinsfile    text
+
+*.h    text
+*.cpp  text
+*.md   text
