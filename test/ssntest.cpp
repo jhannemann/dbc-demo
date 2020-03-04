@@ -2,7 +2,7 @@
 #include "../ssn/ssn.h"
 #include <assertexcept.h>
 
-Q_DECLARE_METATYPE(std::string);
+Q_DECLARE_METATYPE(std::string)
 
 class SSNTest : public QObject {
 Q_OBJECT
@@ -77,6 +77,11 @@ private slots:
 
     void constructor_xfail() {
         QFETCH(std::string, ssn);
+#ifdef NDEBUG
+        // the second argument is to suppress a warning about variadic
+        // macro arguments needing at least one argument
+        QSKIP("Assertions disabled", "");
+#endif
         QVERIFY_EXCEPTION_THROWN(SSN s(ssn), AssertException);
     }
 
