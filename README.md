@@ -7,7 +7,7 @@ at [Kentucky State University](https://www.kysu.edu).
 
 It demonstrates the design and implementation of a software system
 around the following concepts:
--   [Hoare Logic](https://en.wikipedia.org/wiki/Hoare_logic),
+-   [Hoare Logic](https://en.wikipedia.org/wiki/Hoare_logic)
 -   [Assertions](https://en.wikipedia.org/wiki/Assertion_(software_development))
     (Using the
     [Boost.Assert](https://www.boost.org/doc/libs/1_72_0/libs/assert/doc/html/assert.html)
