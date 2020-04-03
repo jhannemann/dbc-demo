@@ -6,3 +6,5 @@ Jenkinsfile    text
 *.h    text
 *.cpp  text
 *.md   text
+*.csv  text
+*.py   text

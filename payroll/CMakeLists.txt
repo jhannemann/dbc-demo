@@ -1,6 +1,9 @@
 SET(EMPLOYEE_HEADERS employee.h hourlyemployee.h salariedemployee.h)
 SET(EMPLOYEE_SOURCES employee.cpp hourlyemployee.cpp salariedemployee.cpp)
 
+configure_file(names.csv names.csv COPYONLY)
+configure_file(generate_data.py generate_data.py COPYONLY)
+
 link_directories(${CMAKE_BINARY_DIR}/assertexcept
                  ${CMAKE_BINARY_DIR}/ssn
                  ${Boost_LIBRARY_DIRS})

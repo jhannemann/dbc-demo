@@ -134,8 +134,24 @@ Special attention should be paid to correctly formulate preconditions,
 invariants, and postconditions
 in the light of the given inheritance hierarchy.
 
+The Python program `generate_data.py` in the `payroll` directory can be used
+to generate a file with 100 names,
+pseudo-randomly assigned, valid Social Security Numbers,
+and either salaried or hourly pay data
+(50% chance for either one).
+Students can then read the payroll file and process the payroll
+by iterating over a polymorphic container,
+printing each employee's name and pay.
+Advanced assignments can ask the students to generate the objects
+by using a design pattern such as a *Factory Method* or *Abstract Factory*. 
+
 In addition, students at the graduate level are then expected
 to also create data-driven unit tests
 and demonstrate that all tests are passed for all classes and their assertions,
 possibly by creating a pipeline for a contiuous integration tool like
 [Jenkins](https://jenkins.io).
+
+Credits
+-------
+
+Names have been created using <https://homepage.net/name_generator/>
