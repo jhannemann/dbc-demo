@@ -4,13 +4,32 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include <vector>
+#include <cstdlib>
+#include <iostream>
+#include <stdexcept>
 
-#include "employee.h"
+#include <assertexcept.h>
+#include <employee.h>
 
 int main() {
-    std::vector<Employee*> payroll;
+    try {
+        std::vector<Employee*> payroll;
 
-    // build and process payroll
+        // build and process payroll
 
-    return 0;
+    }
+    catch (AssertException& e) {
+        std::cerr << "Assertion Exception caught: " << e.what() << '\n';
+        return EXIT_FAILURE;
+    }
+    catch (std::runtime_error& e) {
+        std::cerr << "Standard exception caught: " << e.what() << '\n';
+        return EXIT_FAILURE;
+    }
+    catch (...) {
+        std::cerr << "Unknown exception caught\n";
+        return EXIT_FAILURE;
+    }
+
+    return EXIT_SUCCESS;
 }
