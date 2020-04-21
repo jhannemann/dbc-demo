@@ -1,7 +1,6 @@
 set(CMAKE_AUTOMOC ON)
 
 link_directories(${PROJECT_BINARY_DIR}/assertexcept)
-link_directories(${PROJECT_BINARY_DIR}/assertexcept)
 
 configure_file(ssntest.py ssntest.py COPYONLY)
 
