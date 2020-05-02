@@ -24,6 +24,7 @@ find_package(Boost REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR}/assertexcept)
 include_directories(${CMAKE_SOURCE_DIR}/ssn)
+include_directories(${CMAKE_SOURCE_DIR}/payroll)
 include_directories(${Boost_INCLUDE_DIRS})
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
