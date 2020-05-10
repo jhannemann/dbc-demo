@@ -6,7 +6,7 @@ pipeline {
         stage('Configure') {
             steps {
                 dir('build') {
-                    cmakeBuild buildDir: 'build', installation: 'InSearchPath', sourceDir: '..'
+                    cmakeBuild buildDir: 'build', cmakeArgs: '-DENABLE_TESTING=ON', installation: 'InSearchPath', sourceDir: '..'
                 }
             }
         }
