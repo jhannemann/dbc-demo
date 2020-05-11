@@ -12,7 +12,7 @@ endif(MSVC)
 
 option(ENABLE_TESTING "Enable testing")
 if(ENABLE_TESTING)
-    enable_testing()
+    include(CTest)
 endif(ENABLE_TESTING)
 
 include(CMakeLocal.txt OPTIONAL)

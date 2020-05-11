@@ -6,21 +6,21 @@ pipeline {
         stage('Configure') {
             steps {
                 dir('build') {
-                    cmakeBuild buildDir: 'build', cmakeArgs: '-DENABLE_TESTING=ON', installation: 'InSearchPath', sourceDir: '..'
+                    cmakeBuild buildDir: '.', cmakeArgs: '-DENABLE_TESTING=ON', installation: 'InSearchPath', sourceDir: '..'
                 }
             }
         }
         stage('Build') {
             steps {
                 dir('build') {
-                    cmakeBuild installation: 'InSearchPath', sourceDir: '..', steps: [[withCmake: true]]
+                    cmakeBuild installation: 'InSearchPath', cmakeArgs: '--build', sourceDir: '.', steps: [[withCmake: true]]
                 }
             }
         }
         stage('Test') {
             steps {
                 dir('build') {
-                    ctest arguments: '--no-compress-output -T Test', installation: 'InSearchPath'
+                    ctest arguments: '--no-compress-output -T test', installation: 'InSearchPath'
                 }
             }
             post {
