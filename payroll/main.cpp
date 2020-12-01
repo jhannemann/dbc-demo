@@ -7,13 +7,14 @@
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
+#include <memory>
 
 #include <assertexcept.h>
 #include <employee.h>
 
 int main() {
     try {
-        std::vector<Employee*> payroll;
+        std::vector<std::unique_ptr<Employee>> payroll;
 
         // build and process payroll
 

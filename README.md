@@ -27,8 +27,10 @@ notion of a general `Employee` abstract base class,
 for which `pay()` is determined differently,
 depending on whether an employee is salaried or being paid on an hourly basis.
 A driver program then simulates a payroll processing run
-by filling a polymorphic `std::vector<Employee*>`
+by filling a polymorphic `std::vector<std::unique_ptr<Employee>>`
 and iterating over it to print out paychecks.
+Note that the use of `std::make_unique()` requires a compiler
+compliant with the C++14 standard.
 
 The Social Security Number Class
 --------------------------------
@@ -48,9 +50,7 @@ will match a corresponding output regular expression.
 
 ### A Note on C++11 Regular Expressions as Static Data Members
 
-Regular expressions have been added to the language with the C++11 standard,
-so the demo code requires a compiler compliant with at least that standard.
-
+Regular expressions have been added to the language with the C++11 standard.
 The input and output regular expressions are wrapped in static member functions.
 This avoids an
 *initialization of static data member may throw an exception that cannot be caught*

@@ -54,26 +54,26 @@ std::string SSN::str() const {
     BOOST_ASSERT_MSG(result.size() == 11, "SSN has 11 characters");
     BOOST_ASSERT_MSG(result[3] == '-', "Fourth character is dash");
     BOOST_ASSERT_MSG(result[6] == '-', "Seventh character is dash");
-    BOOST_ASSERT_MSG(result.substr(0, 3) != "000", "Area number not zeros");
+    BOOST_ASSERT_MSG(result.substr(0, 3) != "000", "Area number not zeroes");
     BOOST_ASSERT_MSG(std::regex_match(result.substr(0, 3), integerRegex),
                      "Area number is integer");
     BOOST_ASSERT_MSG(result.substr(0, 3) != "666", "Area number not 666");
-    BOOST_ASSERT_MSG(result[0] != 9, "Aea number is not ITIN");
-    BOOST_ASSERT_MSG(result.substr(4, 2) != "00", "Group number not zeros");
+    BOOST_ASSERT_MSG(result[0] != 9, "Area number is not ITIN");
+    BOOST_ASSERT_MSG(result.substr(4, 2) != "00", "Group number not zeroes");
     BOOST_ASSERT_MSG(std::regex_match(result.substr(4, 2), integerRegex),
                      "Group number is integer");
-    BOOST_ASSERT_MSG(result.substr(7, 4) != "0000", "Serial number not zeros");
+    BOOST_ASSERT_MSG(result.substr(7, 4) != "0000", "Serial number not zeroes");
     BOOST_ASSERT_MSG(std::regex_match(result.substr(7, 4), integerRegex),
                      "Group number is integer");
     return result;
 }
 
 bool SSN::invariant() const {
-    BOOST_ASSERT_MSG(m_area != "000", "Area number not zeros");
+    BOOST_ASSERT_MSG(m_area != "000", "Area number not zeroes");
     BOOST_ASSERT_MSG(m_area != "666", "Area number not 666");
     BOOST_ASSERT_MSG(m_area[0] != '9', "Area number is not ITIN");
-    BOOST_ASSERT_MSG(m_group != "00", "Group number not zeros");
-    BOOST_ASSERT_MSG(m_serial != "0000", "Serial number not zeros");
+    BOOST_ASSERT_MSG(m_group != "00", "Group number not zeroes");
+    BOOST_ASSERT_MSG(m_serial != "0000", "Serial number not zeroes");
     return true;
 }
 
