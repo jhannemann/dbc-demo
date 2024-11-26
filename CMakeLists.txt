@@ -17,7 +17,7 @@ include(CMakeLocal.txt OPTIONAL)
 
 if(ENABLE_TESTING)
     enable_testing()
-    find_package(Qt5Test REQUIRED)
+    find_package(Qt6Test REQUIRED)
     set(CMAKE_CTEST_ARGUMENTS -V)
 endif(ENABLE_TESTING)
 find_package(Boost REQUIRED)

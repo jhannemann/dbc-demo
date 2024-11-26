@@ -18,7 +18,6 @@ private slots:
         QTest::newRow("random") << std::string("123456789");
         QTest::newRow("min") << std::string("001010001");
         QTest::newRow("max") << std::string("899999999");
-        QTest::newRow("random") << std::string("123456789");
         QTest::newRow("equal") << std::string("111111111");
         QTest::newRow("min group") << std::string("001456789");
         QTest::newRow("max group") << std::string("899456789");
@@ -29,7 +28,6 @@ private slots:
         QTest::newRow("random dash") << std::string("123-45-6789");
         QTest::newRow("min dash") << std::string("001-01-0001");
         QTest::newRow("max dash") << std::string("899-99-9999");
-        QTest::newRow("random dash") << std::string("123-45-6789");
         QTest::newRow("equal dash") << std::string("111-11-1111");
         QTest::newRow("min group dash") << std::string("001-45-6789");
         QTest::newRow("max group dash") << std::string("899-45-6789");
@@ -37,7 +35,6 @@ private slots:
         QTest::newRow("max area dash") << std::string("123-99-6789");
         QTest::newRow("min serial dash") << std::string("123-45-0001");
         QTest::newRow("max serial dash") << std::string("123-45-9999");
-        QTest::newRow("random space") << std::string("123-45-6789");
         QTest::newRow("min space") << std::string("001 01 0001");
         QTest::newRow("max space") << std::string("899 99 9999");
         QTest::newRow("random space") << std::string("123 45 6789");
@@ -87,7 +84,7 @@ private slots:
         // macro arguments needing at least one argument
         QSKIP("Assertions disabled", "");
 #endif
-        QVERIFY_EXCEPTION_THROWN(SSN s(ssn), AssertException);
+        QVERIFY_THROWS_EXCEPTION(AssertException, SSN s(ssn));
     }
 
     void str_data() {
